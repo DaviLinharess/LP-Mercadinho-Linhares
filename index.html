@@ -16,6 +16,9 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
+    <!-- Preload crítico para vídeo hero -->
+    <link rel="preload" href="assets/mp4/hero.webm" as="video" type="video/webm" media="(min-width: 0px)">
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -25,8 +28,11 @@
     <header id="header">
         <div class="container header-container">
             <a href="#" class="logo">
-                <img src="assets/images/LogoLinharesFinal.png" alt="Logo Mercadinho Linhares"
-                    onerror="this.outerHTML='<span class=\'logo-text\'>Mercadinho Linhares</span>'">
+                <picture>
+                    <source srcset="assets/images/LogoLinharesFinal.webp" type="image/webp">
+                    <img src="assets/images/LogoLinharesFinal.png" alt="Logo Mercadinho Linhares" width="48" height="48"
+                        onerror="this.outerHTML='<span class=\'logo-text\'>Mercadinho Linhares</span>'">
+                </picture>
             </a>
 
             <nav class="nav-menu">
@@ -51,13 +57,19 @@
         <!-- Hero Section -->
         <section class="hero" id="hero">
             <div class="hero-bg">
-                <video src="assets/mp4/hero.MOV" autoplay muted loop playsinline class="hero-video"></video>
+                <video autoplay muted loop playsinline class="hero-video">
+                    <source src="assets/mp4/hero.webm" type="video/webm">
+                    <source src="assets/mp4/hero.mp4" type="video/mp4">
+                </video>
                 <div class="hero-overlay"></div>
             </div>
 
             <div class="container hero-content">
                 <h1 data-scroll="fade-up" data-delay="9000">
-                    <img src="assets/images/logo_branca.png" alt="Mercadinho Linhares" class="hero-logo">
+                    <picture>
+                        <source srcset="assets/images/logo_branca.webp" type="image/webp">
+                        <img src="assets/images/logo_branca.png" alt="Mercadinho Linhares" class="hero-logo" width="200" height="200">
+                    </picture>
                 </h1>
                 <p class="subtitle" data-scroll="fade-up" data-delay="8100">
                     O seu vizinho de confiança para as <br /> compras do dia a dia.
@@ -77,7 +89,10 @@
                 <!-- Quarta e Quinta Verde -->
                 <div class="oferta-block verde" data-scroll="fade-left">
                     <div class="oferta-image">
-                        <img src="assets/images/frutasverduras.jpg" alt="Frutas e Verduras frescas">
+                        <picture>
+                            <source srcset="assets/images/frutasverduras.webp" type="image/webp">
+                            <img src="assets/images/frutasverduras_opt.jpg" alt="Frutas e Verduras frescas" loading="lazy" width="600" height="400">
+                        </picture>
                         <div class="selo-dia">Dia de Feirão</div>
                     </div>
                     <div class="oferta-card">
@@ -99,47 +114,74 @@
                         <!-- Slides -->
                         <div class="card-produto">
                             <div class="etiqueta-dia">Sexta</div>
-                            <img src="assets/images/pao.jpeg" alt="Pão Francês">
+                            <picture>
+                                <source srcset="assets/images/pao.webp" type="image/webp">
+                                <img src="assets/images/pao_opt.jpeg" alt="Pão Francês" loading="lazy" width="300" height="300">
+                            </picture>
                             <h4>Pão Francês</h4>
                         </div>
                         <div class="card-produto">
                             <div class="etiqueta-dia">Sexta</div>
-                            <img src="assets/images/paodoce.jpg" alt="Pão Doce">
+                            <picture>
+                                <source srcset="assets/images/paodoce.webp" type="image/webp">
+                                <img src="assets/images/paodoce.jpg" alt="Pão Doce" loading="lazy" width="300" height="300">
+                            </picture>
                             <h4>Pão Doce</h4>
                         </div>
                         <div class="card-produto">
                             <div class="etiqueta-dia">Sexta</div>
-                            <img src="assets/images/paonata.jpg" alt="Pão de Nata">
+                            <picture>
+                                <source srcset="assets/images/paonata.webp" type="image/webp">
+                                <img src="assets/images/paonata.jpg" alt="Pão de Nata" loading="lazy" width="300" height="300">
+                            </picture>
                             <h4>Pão de Nata</h4>
                         </div>
                         <div class="card-produto">
                             <div class="etiqueta-dia">Sexta</div>
-                            <img src="assets/images/paodequeijo.jpg" alt="Pão Francês Quentinho">
+                            <picture>
+                                <source srcset="assets/images/paodequeijo.webp" type="image/webp">
+                                <img src="assets/images/paodequeijo_opt.jpg" alt="Pão Francês Quentinho" loading="lazy" width="300" height="300">
+                            </picture>
                             <h4>Pão de Queijo</h4>
                         </div>
                         <div class="card-produto">
                             <div class="etiqueta-dia">Sexta</div>
-                            <img src="assets/images/bolos.jpg" alt="Bolo de Cenoura">
+                            <picture>
+                                <source srcset="assets/images/bolos.webp" type="image/webp">
+                                <img src="assets/images/bolos_opt.jpg" alt="Bolo de Cenoura" loading="lazy" width="300" height="300">
+                            </picture>
                             <h4>Bolos</h4>
                         </div>
                         <div class="card-produto">
                             <div class="etiqueta-dia">Sexta</div>
-                            <img src="assets/images/docesvariados.jpg" alt="Pão de Queijo">
+                            <picture>
+                                <source srcset="assets/images/docesvariados.webp" type="image/webp">
+                                <img src="assets/images/docesvariados_opt.jpg" alt="Pão de Queijo" loading="lazy" width="300" height="300">
+                            </picture>
                             <h4>Doces Variados</h4>
                         </div>
                         <div class="card-produto">
                             <div class="etiqueta-dia">Sexta</div>
-                            <img src="assets/images/sonho.jpg" alt="Sonho">
+                            <picture>
+                                <source srcset="assets/images/sonho.webp" type="image/webp">
+                                <img src="assets/images/sonho.jpg" alt="Sonho" loading="lazy" width="300" height="300">
+                            </picture>
                             <h4>Sonho</h4>
                         </div>
                         <div class="card-produto">
                             <div class="etiqueta-dia">Sexta</div>
-                            <img src="assets/images/cocorote.jpg" alt="Cocorote da Casa">
+                            <picture>
+                                <source srcset="assets/images/cocorote.webp" type="image/webp">
+                                <img src="assets/images/cocorote_opt.jpg" alt="Cocorote da Casa" loading="lazy" width="300" height="300">
+                            </picture>
                             <h4>Cocorote da Casa</h4>
                         </div>
                         <div class="card-produto">
                             <div class="etiqueta-dia">Sexta</div>
-                            <img src="assets/images/salgado.jpeg" alt="Salgados">
+                            <picture>
+                                <source srcset="assets/images/salgado.webp" type="image/webp">
+                                <img src="assets/images/salgado_opt.jpeg" alt="Salgados" loading="lazy" width="300" height="300">
+                            </picture>
                             <h4>Salgados</h4>
                         </div>
                     </div>
@@ -148,7 +190,10 @@
                 <!-- Sábado do Açougue -->
                 <div class="oferta-block acougue" data-scroll="scale-up">
                     <div class="acougue-banner">
-                        <img src="assets/images/açougue.jpg" alt="Cortes de Carnes Premium">
+                        <picture>
+                            <source srcset="assets/images/açougue.webp" type="image/webp">
+                            <img src="assets/images/açougue_opt.jpg" alt="Cortes de Carnes Premium" loading="lazy" width="600" height="400">
+                        </picture>
                         <div class="faixa-diagonal">Dia de Churrasco</div>
                     </div>
                     <div class="acougue-text">
@@ -203,7 +248,10 @@
         <section class="historia" id="historia">
             <div class="container historia-container" data-scroll="fade-in">
                 <div class="historia-foto">
-                    <img src="assets/images/retroML.JPG" alt="Fachada antiga ou Proprietário" class="polaroid">
+                    <picture>
+                        <source srcset="assets/images/retroML.webp" type="image/webp">
+                        <img src="assets/images/retroML_opt.JPG" alt="Fachada antiga ou Proprietário" class="polaroid" loading="lazy" width="400" height="500">
+                    </picture>
                 </div>
                 <div class="historia-texto">
                     <h2>Nossa História</h2>

@@ -252,6 +252,7 @@ header.scrolled .header-socials a {
     object-position: center 60%;
     transform: scale(1.02);
     transition: transform 1.5s ease-out;
+    will-change: transform;
 }
 
 .hero-bg.animate-zoom-in video {
@@ -303,35 +304,18 @@ header.scrolled .header-socials a {
     padding: 16px 36px;
     font-size: 1.1rem;
     border-radius: 50px;
-    animation: pulse-cta 2s infinite;
+    /* Removida animação contínua para melhorar performance */
 }
 
 .hero .btn-primary:hover {
-    animation: none;
     transform: scale(1.05);
     background-color: var(--color-action-hover);
-}
-
-@keyframes pulse-cta {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 209, 102, 0.7);
-    }
-
-    70% {
-        transform: scale(1.05);
-        box-shadow: 0 0 0 15px rgba(255, 209, 102, 0);
-    }
-
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 209, 102, 0);
-    }
 }
 
 /* --- Ofertas Section --- */
 .ofertas {
     padding: 5rem 0;
+    content-visibility: auto;
 }
 
 .oferta-block {
@@ -577,6 +561,7 @@ header.scrolled .header-socials a {
 .avaliacoes {
     background-color: var(--color-base-dark);
     padding: 5rem 0;
+    content-visibility: auto;
 }
 
 .avaliacoes-grid {
@@ -613,6 +598,7 @@ header.scrolled .header-socials a {
 /* --- História Section --- */
 .historia {
     padding: 5rem 0;
+    content-visibility: auto;
 }
 
 .historia-container {
@@ -653,6 +639,7 @@ header.scrolled .header-socials a {
     background-color: var(--color-highlight-dark);
     color: var(--color-base-dark);
     padding: 5rem 0;
+    content-visibility: auto;
 }
 
 .localizacao .section-title {
@@ -702,6 +689,7 @@ header.scrolled .header-socials a {
 /* --- FAQ Section --- */
 .faq {
     padding: 5rem 0;
+    content-visibility: auto;
 }
 
 .faq-list {
@@ -829,7 +817,8 @@ footer {
 /* --- Scroll Animations (Classes adicionadas pelo JS) --- */
 [data-scroll] {
     opacity: 0;
-    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
 }
 
 [data-scroll="fade-up"] {
@@ -852,20 +841,24 @@ footer {
 .animate-fade-up {
     opacity: 1 !important;
     transform: translateY(0) !important;
+    will-change: auto;
 }
 
 .animate-fade-left {
     opacity: 1 !important;
     transform: translateX(0) !important;
+    will-change: auto;
 }
 
 .animate-scale-up {
     opacity: 1 !important;
     transform: scale(1) !important;
+    will-change: auto;
 }
 
 .animate-fade-in {
     opacity: 1 !important;
+    will-change: auto;
 }
 
 
